@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos - Feliz Cumpleaños, Fiorella!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+        .gallery {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            height: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        #message {
+            font-size: 1.5em;
+            color: #ff6f61;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            padding: 10px 20px;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 15px; /* Ubica el mensaje en la parte inferior de la galería */
+            width: 100%;
+            text-align: center;
+        }
+        #playButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #playButton:hover {
+            background-color: #ff3b3b;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Feliz Cumpleaños, Fiorella! 🎂❤️</h1>
+    <h1>¡Te amo muchooooooooooooo❤️❤️❤️❤️❤️❤️</h1>
+    <div class="gallery">
+        <img src="/fotos/foto1.jpg" alt="Foto 1">
+        <img src="/fotos/foto2.jpg" alt="Foto 2">
+        <img src="/fotos/foto3.jpg" alt="Foto 3">
+        <img src="/fotos/foto4.jpg" alt="Foto 4">
+        <img src="/fotos/foto5.jpg" alt="Foto 5">
+        <img src="/fotos/foto6.jpg" alt="Foto 6">
+        <img src="/fotos/foto7.jpg" alt="Foto 7">
+        <img src="/fotos/foto8.jpg" alt="Foto 8">
+        <img src="/fotos/foto9.jpg" alt="Foto 9">
+        <img src="/fotos/foto10.jpg" alt="Foto 10">
+        <img src="/fotos/foto11.jpg" alt="Foto 11">
+        <img src="/fotos/foto12.jpg" alt="Foto 12">
+        <img src="/fotos/foto13.jpg" alt="Foto 13">
+        <img src="/fotos/foto14.jpg" alt="Foto 14">
+        <img src="/fotos/foto15.jpg" alt="Foto 15">
+        <img src="/fotos/foto16.jpg" alt="Foto 16">
+        <img src="/fotos/foto17.jpg" alt="Foto 17">
+        <img src="/fotos/foto18.jpg" alt="Foto 18">
+        <img src="/fotos/foto19.jpg" alt="Foto 19">
+        <img src="/fotos/foto20.jpg" alt="Foto 20">
+        <img src="/fotos/foto21.jpg" alt="Foto 21">
+        <img src="/fotos/foto22.jpg" alt="Foto 22">
+        <img src="/fotos/foto23.jpg" alt="Foto 23">
+        <img src="/fotos/foto24.jpg" alt="Foto 24">
+        <img src="/fotos/foto25.jpg" alt="Foto 25">
+        <img src="/fotos/foto26.jpg" alt="Foto 26">
+        <img src="/fotos/foto27.jpg" alt="Foto 27">
+        <!-- Añade más fotos si deseas -->
+        <div id="message">Un viaje por nuestros mejores momentos ❤️</div>
+    </div>
+
+    <!-- Agrega el audio -->
+    <audio id="audio">
+        <source src="/audio/chachacha.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Botón para reproducir la música -->
+    <button id="playButton">Reproducir Música</button>
+
+    <script>
+        const images = document.querySelectorAll('.gallery img');
+        const audio = document.getElementById("audio");
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            images[currentImageIndex].style.opacity = 0;  // Oculta la imagen actual
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].style.opacity = 1;  // Muestra la siguiente imagen
+        }
+
+        images[currentImageIndex].style.opacity = 1;  // Muestra la primera imagen
+
+        // Cambia la imagen cada 3 segundos
+        setInterval(showNextImage, 2000);
+
+        // Evento para el botón de reproducir música
+        document.getElementById("playButton").addEventListener("click", function() {
+            audio.play();
+        });
+    </script>
+</body>
+</html>
