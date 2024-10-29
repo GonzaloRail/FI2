@@ -20,7 +20,10 @@
         h1 {
             margin-bottom: 20px;
             color: #ff6f61;
-        }
+            text-align: center; /* Centra el texto horizontalmente */
+            width: 100%; /* Asegura que el h1 ocupe todo el ancho disponible */
+}
+
         .gallery {
             position: relative;
             width: 90%;
@@ -65,6 +68,7 @@
     </style>
 </head>
 <body>
+    <button id="playButton">Reproducir nuestra cancion</button>
     <h1>¡Feliz Cumpleaños, Fiorella! 🎂❤️</h1>
     <h1>¡Te amo muchooooooooooooo❤️❤️❤️❤️❤️❤️</h1>
     <div class="gallery">
@@ -106,7 +110,7 @@
     </audio>
 
     <!-- Botón para reproducir la música -->
-    <button id="playButton">Reproducir Música</button>
+    
 
     <script>
         const images = document.querySelectorAll('.gallery img');
